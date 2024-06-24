@@ -16,11 +16,11 @@ pull_model: Pull Model (App Dev) {
     shape: image
     icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FCloud%20Build.svg
   }
-  gcp_container_registry: "Container Registry" {
+  gcp_artifact_registry: "Artifact Registry" {
     shape: image
-    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FContainer%20Registry.svg
+    icon: https://raw.githubusercontent.com/tcaky/WikiMeThis/main/media/google-cloud-icons/artifact_registry/artifact_registry.svg
   }
-  github: "GitHub Action" {
+  github: "GitHub" {
     shape: image
     icon: https://icons.terrastruct.com/dev%2Fgithub.svg
   }
@@ -30,6 +30,6 @@ pull_model: Pull Model (App Dev) {
   gcp_cloudbuild -> github: Monitor for software changes\n(separate from infra changes in the repo)
   gcp_cloudbuild <- github: Pull new changes to build container
   gcp_cloudbuild -> gcp_cloudbuild: Build new image
-  gcp_cloudbuild -> gcp_container_registry: Push new image to registry
-  k8s <- gcp_container_registry: Pull and deploy new image into cluster
+  gcp_cloudbuild -> gcp_artifact_registry: Push new image to\nArtifact Registry
+  k8s <- gcp_artifact_registry: Pull and deploy new image into cluster
 }

@@ -1,0 +1,37 @@
+vars: {
+  d2-config: {
+    layout-engine: elk
+    # Terminal theme code
+    theme-id: 300
+  }
+}
+
+push_model: Cloudbuild Pull Model {
+  shape: sequence_diagram
+  gcp_cloudbuild: "Cloudbuild" {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FCloud%20Build.svg
+  }
+  gcp_cloudbuild_gh_app: "Cloudbuild GitHub App" {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FCloud%20Build.svg
+  }
+  github: "GitHub" {
+    shape: image
+    icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+  }
+  gcp_artifact_registry: "Artifact Registry" {
+    shape: image
+    icon: https://raw.githubusercontent.com/tcaky/WikiMeThis/main/media/google-cloud-icons/artifact_registry/artifact_registry.svg
+  }
+  gcp_cloud_run: "Cloud Run" {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FCompute%2FCloud%20Run.svg
+  }
+  gcp_cloudbuild_gh_app -> github: Cloudbuild GitHub App triggers\non change to monitored branch
+  gcp_cloudbuild <- gcp_cloudbuild_gh_app: Initiate build process
+  gcp_cloudbuild <- github: Pull changed code to build container
+  gcp_cloudbuild -> gcp_cloudbuild: Build new\ncontainer image
+  gcp_cloudbuild -> gcp_artifact_registry: Push new image to Artifact Registry
+  gcp_cloudbuild -> gcp_cloud_run: Push image from registry to Cloud Run
+}

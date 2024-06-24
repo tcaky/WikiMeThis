@@ -12,9 +12,9 @@ push_model: Push Model {
     shape: image
     icon: https://icons.terrastruct.com/dev%2Fgithub.svg
   }
-  gcp_container_registry: "Container Registry" {
+  gcp_artifact_registry: "Artifact Registry" {
     shape: image
-    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FContainer%20Registry.svg
+    icon: https://raw.githubusercontent.com/tcaky/WikiMeThis/main/media/google-cloud-icons/artifact_registry/artifact_registry.svg
   }
   gcp_cloud_run: "Cloud Run" {
     shape: image
@@ -23,6 +23,6 @@ push_model: Push Model {
   # github."Credentials stored in GitHub for use by actions to push to GCP"
   github -> github: Detect change to\nbranch being monitored
   github -> github: Build container
-  github -> gcp_container_registry: Update image in registry
+  github -> gcp_artifact_registry: Update image in registry
   github -> gcp_cloud_run: Push new image
 }

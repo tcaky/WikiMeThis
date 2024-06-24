@@ -1,0 +1,32 @@
+vars: {
+  d2-config: {
+    layout-engine: elk
+    # Terminal theme code
+    theme-id: 300
+  }
+}
+
+push_model: Push Model {
+  shape: sequence_diagram
+  github: "GitHub Action" {
+    shape: image
+    icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+  }
+  gcp_cloudbuild: "Cloudbuild" {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FCloud%20Build.svg
+  }
+  gcp_container_registry: "Container Registry" {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FContainer%20Registry.svg
+  }
+  gcp_cloud_run: "Cloud Run" {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FCompute%2FCloud%20Run.svg
+  }
+  # github."Credentials stored in GitHub for use by actions to push to GCP"
+  github -> gcp_cloudbuild: Opt2: invoke image build
+  # github."Alternate deployment.  Credentials still in GitHub"
+  gcp_cloudbuild -> gcp_container_registry: Opt2: Build and push to registry
+  gcp_cloudbuild -> gcp_cloud_run: Opt2: Deploy to Cloud Run
+}

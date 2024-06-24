@@ -1,0 +1,35 @@
+vars: {
+  d2-config: {
+    layout-engine: elk
+    # Terminal theme code
+    theme-id: 300
+  }
+}
+
+pull_model: Pull Model (App Dev) {
+  shape: sequence_diagram
+  k8s: "Kubernetes (Flux)" {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FCompute%2FKubetnetes%20Engine.svg
+  }
+  gcp_cloudbuild: "Cloudbuild" {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FCloud%20Build.svg
+  }
+  gcp_container_registry: "Container Registry" {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FContainer%20Registry.svg
+  }
+  github: "GitHub Action" {
+    shape: image
+    icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+  }
+  k8s -> github: Monitors for merge to main branch\n(or any branch configuration dependent)\nfor infra changes
+  k8s <- github: pull infrastructure changes
+  k8s -> k8s: make infrastructure\nchanges a reality
+  gcp_cloudbuild -> github: Monitor for software changes\n(separate from infra changes in the repo)
+  gcp_cloudbuild <- github: Pull new changes to build container
+  gcp_cloudbuild -> gcp_cloudbuild: Build new image
+  gcp_cloudbuild -> gcp_container_registry: Push new image to registry
+  k8s <- gcp_container_registry: Pull and deploy new image into cluster
+}

@@ -2,7 +2,7 @@
 
 🟢 = renders; 🔴 = does not render
 
-* 🟢[Mermaid C4C Context diagram](wiki/Mermaid-C4C-Context-diagram) 
+* 🟢[Mermaid C4C Context diagram](wiki/mermaid-diagram-tests/mermaid-c4c-context-diagram.md) 
 * 🟢[Mermaid class diagram test](wiki/Mermaid-class-diagram-test) 
 * 🟢[Mermaid ERD](wiki/Mermaid-ERD) 
 * 🟢[Mermaid flowchart](wiki/Mermaid-flowchart) 

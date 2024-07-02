@@ -3,8 +3,8 @@
 🟢 = renders; 🔴 = does not render
 
 * 🟢[Mermaid C4C Context diagram](mermaid-c4c-context-diagram.md) 
-* 🟢[Mermaid class diagram](mermaid-diagram-tests/mermaid-class-diagram.md) 
-* 🟢[Mermaid ERD](mermaid-diagram-tests/mermaid-erd.md) 
+* 🟢[Mermaid class diagram](mermaid-class-diagram.md) 
+* 🟢[Mermaid ERD](mermaid-erd.md) 
 * 🟢[Mermaid flowchart](mermaid-flowchart.md) 
 * 🟢[Mermaid Gantt](mermaid-gantt.md) 
 * 🟢[Mermaid Gitgraph](mermaid-gitgraph.md) 

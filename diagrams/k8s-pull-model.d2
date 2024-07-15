@@ -1,8 +1,6 @@
 vars: {
   d2-config: {
     layout-engine: elk
-    # Terminal theme code
-    theme-id: 300
   }
 }
 
@@ -24,12 +22,16 @@ pull_model: Pull Model (App Dev) {
     shape: image
     icon: https://icons.terrastruct.com/dev%2Fgithub.svg
   }
-  k8s -> github: Monitors for merge to main branch\n(or any branch configuration dependent)\nfor infra changes
-  k8s <- github: pull infrastructure changes
-  k8s -> k8s: make infrastructure\nchanges a reality
-  gcp_cloudbuild -> github: Monitor for software changes\n(separate from infra changes in the repo)
-  gcp_cloudbuild <- github: Pull new changes to build container
-  gcp_cloudbuild -> gcp_cloudbuild: Build new image
-  gcp_cloudbuild -> gcp_artifact_registry: Push new image to\nArtifact Registry
-  k8s <- gcp_artifact_registry: Pull and deploy new image into cluster
+  infra: Infrastucture Change Monitoring {
+    k8s -> github: Monitors for for infra changes
+    k8s <- github: Pull infrastructure changes
+    k8s -> k8s: Make infrastructure\nchanges a reality
+  }
+  application: Application Change Monitoring {
+    gcp_cloudbuild -> github: Monitor for application changes
+    gcp_cloudbuild <- github: Pull new changes to build container
+    gcp_cloudbuild -> gcp_cloudbuild: Build new image
+    gcp_cloudbuild -> gcp_artifact_registry: Push new image to\nArtifact Registry
+    k8s <- gcp_artifact_registry: Pull and deploy new image into cluster
+  }
 }

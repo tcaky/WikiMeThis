@@ -35,3 +35,10 @@ https://github.com/PHACDataHub/node-microservices-demo
 * PHAC naming standard: http://mysource.hc-sc.gc.ca/eng/policy/ss/guideline-standard-naming-convention
 * HC/PHAC Enterprise Architecture group https://jill.hc-sc.gc.ca/confluence/pages/viewpage.action?pageId=106267998
 * Archimate
+
+# Security focussed links
+* https://pendrivelinux.com/yumi-multiboot-usb-creator/
+* https://pine64.org
+
+# Systems (laptops, RPi, etc.)
+* https://system76.com/

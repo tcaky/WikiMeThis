@@ -11,6 +11,7 @@ Installed VirtualBox on Windows 11
 Log onto the VM.
 
 ```shell
+# From: https://dzone.com/articles/install-docker-kubernetes-and-minikube-on-linux-mi
 
 sudo apt update
 
@@ -27,5 +28,14 @@ sudo echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://
 sudo apt update
 sudo apt-get install -y kubectl
 
+# Install Minikube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+# In a terminal...
+minikube start --driver=docker
+
+# Make Docker the default driver
+https://dzone.com/articles/install-docker-kubernetes-and-minikube-on-linux-mi
 
 ```

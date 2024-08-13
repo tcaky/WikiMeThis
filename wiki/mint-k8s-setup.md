@@ -39,3 +39,15 @@ minikube start --driver=docker
 https://dzone.com/articles/install-docker-kubernetes-and-minikube-on-linux-mi
 
 ```
+
+# Guest Additions
+I used a post from [Ask Ubuntu](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm) to solve this.
+
+> In case we have installed the OSE edition of Virtual Box from the repositories we can add the guest additions from the repositories in the guest. This will install guest additions matching the Virtual Box version as obtained from the repositories. It is not recommended to install these in newer releases of Virtual Box as obtained from the Oracle repository (see below).
+>
+> Alternatively we can install the package virtualbox-guest-additions-iso in the host Ubuntu.
+> 
+> `sudo apt-get install virtualbox-guest-additions-iso`
+> 
+> The .iso file with an image of the OSE edition of the guest additions CD will install in the host directory /usr/share/virtualbox/VBoxGuestAdditions.iso. Mount this .iso file as a CD in your virtual machine's settings. In the guest you will then have access to a CD-ROM with the installer.
+

@@ -6,3 +6,18 @@ kind:
 metadata:
 spec:
 ```
+
+Example
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+    name: myapp-pod
+    labels:
+        app: myapp
+        type: front-end
+spec:
+    containers:
+        - name: nginx-container
+          image: nginx
+```

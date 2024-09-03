@@ -1,6 +1,7 @@
 # Split Keyboard Stuff
 
 ## My Likely Build
+More will be added to this list as appropriate....
 * [Kyria KB PCB](https://splitkb.com/products/kyria-rev3) (will not use any encoder though)
 * [Zilent Switches](https://zealpc.net/products/zilent?variant=5894817710118)
 * [Elite-C V4 - USB-C](https://keeb.io/products/elite-c-low-profile-version-usb-c-pro-micro-replacement-atmega32u4)

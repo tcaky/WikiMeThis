@@ -16,6 +16,9 @@
 * [Zilent Switches](https://zealpc.net/products/zilent?variant=5894817710118)
 * https://splitkb.com/products/manfrotto-pocket-tripod?variant=39254223814733
 * https://splitkb.com/products/tenting-puck
+* https://keeb.io/products/elite-c-low-profile-version-usb-c-pro-micro-replacement-atmega32u4
+* https://keeb.io/products/trrs-jack-3-5mm?pr_prod_strat=jac&pr_rec_id=5ebac061b&pr_rec_pid=10549934214&pr_ref_pid=4420437573726&pr_seq=uniform
+* https://keeb.io/products/trrs-cable?pr_prod_strat=jac&pr_rec_id=5ebac061b&pr_rec_pid=11428282758&pr_ref_pid=4420437573726&pr_seq=uniform
 
 
 ## manufactured split-keyboards

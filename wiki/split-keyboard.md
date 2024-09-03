@@ -1,5 +1,13 @@
 # Split Keyboard Stuff
 
+## My Likely Build
+* [Kyria KB PCB](https://splitkb.com/products/kyria-rev3) (will not use any encoder though)
+* [Zilent Switches](https://zealpc.net/products/zilent?variant=5894817710118)
+* [Elite-C V4 - USB-C](https://keeb.io/products/elite-c-low-profile-version-usb-c-pro-micro-replacement-atmega32u4)
+* [TRRS PJ-320A Jack - 3.5mm](https://keeb.io/products/trrs-jack-3-5mm?pr_prod_strat=jac&pr_rec_id=5ebac061b&pr_rec_pid=10549934214&pr_ref_pid=4420437573726&pr_seq=uniform)
+* [TRRS Cable](https://keeb.io/products/trrs-cable?pr_prod_strat=jac&pr_rec_id=5ebac061b&pr_rec_pid=11428282758&pr_ref_pid=4420437573726&pr_seq=uniform)
+
+
 ## DIY Split Keyboards
 * https://splitkb.com/products/kyria-rev3
 * https://bastardkb.com/charybdis/

@@ -1,0 +1,40 @@
+vars: {
+  d2-config: {
+    layout-engine: elk
+    # Terminal theme code
+    theme-id: 300
+  }
+}
+dns_sequence: Self-Serve DNS Model {
+  shape: sequence_diagram
+  user: "User" {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F365-user.svg
+  }
+  repo_admin: "Repo Admin" {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F365-user.svg
+  }
+  github: "GitHub" {
+    shape: image
+    icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+  }
+  fluxcd: "K8s - Flux CD" {
+    shape: image
+    icon: https://raw.githubusercontent.com/tcaky/WikiMeThis/main/media/k8s-related-icons/fluxcdio-icon.svg
+  }
+  gcp_k8s_config_connector: "K8s - Config Connector" {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FCompute%2FKubetnetes%20Engine.svg
+  }
+  gcp_cloud_dns: "Cloud DNS" {
+    shape: image
+    icon: https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20DNS.svg
+  }
+  user -> github: User creates pull \nrequest (PR) for new DNS entry \non an IPPM managed subdomain
+  github -> repo_admin: Repo admin \nnotified of PR
+  repo_admin -> github: PR approved.  YAML \nmerged to main
+  fluxcd <- github: Flux syncs change \nto DNS Kubernetes cluster
+  gcp_k8s_config_connector -> fluxcd: Read changes from \ndata synchronized by Flux
+  gcp_k8s_config_connector -> gcp_cloud_dns: Create described \nDNS entries
+}

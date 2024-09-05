@@ -13,8 +13,8 @@ git status
 ```bash
 git pull origin main
 ```
-
 OR
+
 ## Rebase from main (not sure if better to merge or rebase)
 ```bash 
 # ensure on the correct brand
@@ -26,6 +26,4 @@ git checkout your-branch
 # branch, creating a cleaner history compared to a merge.
 git fetch origin
 git rebase origin/main
-
-
 ```

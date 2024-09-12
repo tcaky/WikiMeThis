@@ -40,3 +40,4 @@ More will be added to this list as appropriate....
 ## Other
 * https://www.keyboard.university/
 * https://kbd.news/
+* [Typing Practice](https://keybr.com)

@@ -36,8 +36,10 @@ More will be added to this list as appropriate....
 * https://www.moergo.com/collections/glove80-keyboards/products/glove80-split-ergonomic-keyboard-revision-2?variant=47282998739217
 * https://www.zsa.io/moonlander
 * https://kinesis-ergo.com/keyboards/advantage360/
+* [The Atreus](https://shop.keyboard.io/products/keyboardio-atreus?srsltid=AfmBOopDqwEzjI120CVL6b0sG4xRhg8XwUetqOzjiYLUtpeFrXzAAeKy)
 
 ## Other
 * https://www.keyboard.university/
 * https://kbd.news/
 * [Typing Practice](https://keybr.com)
+* [Foldable Origami Bluetooth Mouse](https://myair0.com/)

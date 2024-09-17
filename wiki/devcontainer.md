@@ -1,0 +1,3 @@
+# Random(ish) things related to setting up devcontainers....
+
+* https://dev.to/tanvirrahman/devcontainer-and-makefile-a-duo-for-simplified-gcp-workflows-ii9

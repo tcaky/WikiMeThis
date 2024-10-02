@@ -1,0 +1,50 @@
+# SOPS (Secrets OPerationS)
+vars: {
+  d2-config: {
+    layout-engine: elk
+    # Terminal theme code
+    theme-id: 300
+  }
+}
+grid-rows: 3
+
+intro: |md
+  # SOPS (Secrets OPerationS)
+  <p>A platform-agnostic command-line tool for encrypting and decrypting configuration files, such as YAML, JSON, and INI files.<br/>It provides a simple and secure way to store sensitive information, like passwords, API keys, and other secrets, in plain text files.</p>
+  <p>More stuff here</p>
+  <p>Another paragraph</p>
+
+|
+sops_sequence: SOPS Sequence {
+  shape: sequence_diagram
+  user: "User" {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F365-user.svg
+  }
+  sops: "SOPS" {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F204-settings.svg
+  }
+  kms: "Key Management System" {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F216-key.svg
+  }
+  file: "File" {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F257-file.svg
+  }
+  user -> sops: The user initiates an encryption\nor decryption operation on a file.
+  sops -> kms: SOPS requests the user's configuration.
+  sops <- kms: SOPS receives the user's configuration,\nincluding encryption method and key information
+  sops -> file: SOPS uses the selected key to encrypt or decrypt the file.
+  user -> file: User reads or writes to file.
+  sops -> sops: If the file is modified during decryption,\nSOPS re-encrypts the updated file\nusing the original encryption method and key.
+  sops -> file: The encrypted or decrypted file is saved to its original location.
+}
+
+notes: |md
+  # Notes
+  * SOPS automatically handles key rotation and fallback mechanisms, ensuring seamless encryption and decryption.
+  * The encryption method information is stored as part of the file, allowing SOPS to determine the correct decryption method without user intervention.
+
+|

@@ -1,19 +1,29 @@
 # Useful Gcloud Stuff
 
+# Authenticating
+```bash
+gcloud init
+```
+
+# Setting working project in Cloud Shell
+```bash
+gcloud config set project ${PROJECT_ID}
+```
+
 ## Getting Assigned Ip Addresses For Given Folder (and subfolders)
 ```bash
 FOLDER_ID=1234567890ab
 
 # output to file
-gcloud asset search-all-resources --scope=folders/${$FOLDER_ID} --asset-types='compute.googleapis.com/Address' --read-mask='versionedResources,project,parentFullResourceName' --format="csv(versionedResources.resource.addressType,versionedResources.resource.address,parentFullResourceName:label='project_id',versionedResources.resource.selfLink:label='resource_name')" | awk -F, '{gsub(/.*\//, "", $3);gsub(/.*\//, "", $4); print}' OFS=, > ips.csv
+gcloud asset search-all-resources --scope=folders/${FOLDER_ID} --asset-types='compute.googleapis.com/Address' --read-mask='versionedResources,project,parentFullResourceName' --format="csv(versionedResources.resource.addressType,versionedResources.resource.address,parentFullResourceName:label='project_id',versionedResources.resource.selfLink:label='resource_name')" | awk -F, '{gsub(/.*\//, "", $3);gsub(/.*\//, "", $4); print}' OFS=, > ips.csv
 
 # search for a particular IP address (or part of one)
-gcloud asset search-all-resources --scope=folders/${$FOLDER_ID} --asset-types='compute.googleapis.com/Address' --read-mask='versionedResources,project,parentFullResourceName' --format="csv(versionedResources.resource.addressType,versionedResources.resource.address,parentFullResourceName:label='project_id',versionedResources.resource.selfLink:label='resource_name')" | awk -F, '{gsub(/.*\//, "", $3);gsub(/.*\//, "", $4); print}' OFS=, | grep '35.203.1'
+gcloud asset search-all-resources --scope=folders/${FOLDER_ID} --asset-types='compute.googleapis.com/Address' --read-mask='versionedResources,project,parentFullResourceName' --format="csv(versionedResources.resource.addressType,versionedResources.resource.address,parentFullResourceName:label='project_id',versionedResources.resource.selfLink:label='resource_name')" | awk -F, '{gsub(/.*\//, "", $3);gsub(/.*\//, "", $4); print}' OFS=, | grep '35.203.1'
 ```
 ## Getting Assigned Ip Addresses For Entire Organization
 ```bash
 ORG_ID=1234567890ab
-gcloud asset search-all-resources --scope=organizations/${$ORG_ID} --asset-types='computer.googleapis.com/Address' --read-mask='*' --format=json
+gcloud asset search-all-resources --scope=organizations/${ORG_ID} --asset-types='computer.googleapis.com/Address' --read-mask='*' --format=json
 ```
 
 

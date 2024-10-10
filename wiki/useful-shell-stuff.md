@@ -10,3 +10,5 @@ df -h
 ```bash
 du -h --max-depth=1 /home/admin_keith_young
 ```
+
+[Parameter Expansion](https://stackabuse.com/guide-to-parameter-expansion-in-bash/)

@@ -2,7 +2,12 @@
 
 # Authenticating
 ```bash
+# initialize or update a configuration. 
+# no need to run every time
 gcloud init
+
+# authentication (when a configuration already exists)
+gcloud auth
 ```
 
 # Setting working project in Cloud Shell

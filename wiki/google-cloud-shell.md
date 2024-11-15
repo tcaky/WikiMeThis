@@ -2,9 +2,24 @@
 
 Google Cloud Shell Editor is based on the codeoss project (the base of vscode).
 
+## Which region is my cloud shell running in?
+
+```bash
+# from: https://stackoverflow.com/a/51201608
+curl -H "Metadata-Flavor: Google" metadata/computeMetadata/v1/instance/zone
+# from: https://cloud.google.com/shell/docs/how-cloud-shell-works#zone_selection
+curl metadata/computeMetadata/v1/instance/zone
+```
+## Understanding where my persisted cloud shell data is stored
+```bash
+curl metadata/computeMetadata/v1/instance/disks/
+# disk 0 should be 'boot', disk 1 should be 'home'
+
+```
+
 ## Customize .bashrc
 
-This reflects customizations to adjust the editor and terminal that are part of the editor.  This is not the complete .bashrc with everything custom in it.
+This reflects customizations to adjust the editor and terminal that are part of the editor.  This is not the complete .bashrc with everything custom in it. See [[gcp-my_bashrc]] for my full bashrc customizations.
 
 ```bash
 FONT_NAME="FiraMono"

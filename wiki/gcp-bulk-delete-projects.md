@@ -6,23 +6,24 @@ Assumptions:
 ```bash
 #!/bin/bash
 
-# Enable error handling
+# Enable robust error handling
 set -euo pipefail
 
 # Function to handle errors
 function handle_error {
-  echo "Error on line $1"
-  exit 1
+    echo "Error on line $1"
+    exit 1
 }
 trap 'handle_error $LINENO' ERR
 
 # Function to delete a project
 delete_project() {
     local project_id="$1"
+    local search_path="$2"
 
-    # Validate GCP Project ID Format
-    if [[ ! $project_id =~ ^(ph|hc)[xtpd]-([a-z0-9]{12})$ ]]; then
-        echo "Error: Invalid project ID format for '$project_id'. Expected format: (ph|hc)[xtpd]-([a-z0-9]{12})"
+    # Validate GCP Project ID Format (allowing variable-length IDs)
+    if [[ ! $project_id =~ ^(ph|hc)[xtpd]-([a-z0-9]+)$ ]]; then
+        echo "Error: Invalid project ID format for '$project_id'. Expected format: (ph|hc)[xtpd]-([a-z0-9]+)"
         return 1
     fi
 
@@ -31,13 +32,19 @@ delete_project() {
     project_suffix="${BASH_REMATCH[2]}"
     project_var="${project_prefix}-${project_suffix}"
 
-    echo "Processing project: $project_var"
+    echo "Processing project: $project_var in $search_path"
 
-    # Find the directory matching the project variable
-    project_dir=$(find . -maxdepth 1 -type d -name "$project_var" -print -quit)
+    # Ensure the search path exists
+    if [[ ! -d "$search_path" ]]; then
+        echo "Error: The specified search path '$search_path' does not exist."
+        return 1
+    fi
+
+    # Find the directory matching the project variable inside the specified path
+    project_dir=$(find "$search_path" -maxdepth 1 -type d -name "$project_var" -print -quit)
 
     if [[ -z "$project_dir" ]]; then
-        echo "Error: No directory found matching '$project_var'"
+        echo "Error: No directory found matching '$project_var' in '$search_path'"
         return 1
     fi
 
@@ -70,13 +77,18 @@ delete_project() {
     echo "Project deletion process completed for $project_var."
 }
 
-# If multiple project IDs are provided, loop through them
-if [[ $# -eq 0 ]]; then
-    echo "Usage: $0 <GCP Project ID 1> [GCP Project ID 2] ... [GCP Project ID N]"
+# Ensure at least two arguments are provided
+if [[ $# -lt 2 ]]; then
+    echo "Usage: $0 <search_path> <GCP Project ID 1> [GCP Project ID 2] ... [GCP Project ID N]"
     exit 1
 fi
 
+# Extract search path and shift arguments
+search_path="$1"
+shift
+
+# Process each project ID
 for project_id in "$@"; do
-    delete_project "$project_id"
+    delete_project "$project_id" "$search_path"
 done
 ```

@@ -1,7 +1,8 @@
 # Bulk Delete projects
 Assumptions:
-1. projects are located in subdirectories below where this script is executed.
+1. gh cli tools are installed (this create PRs)
 2. follow the naming standard we use for projects.
+
 
 ```bash
 #!/bin/bash
@@ -16,7 +17,7 @@ function handle_error {
 }
 trap 'handle_error $LINENO' ERR
 
-# Function to delete a project
+# Function to delete a project and create a PR
 delete_project() {
     local project_id="$1"
     local search_path="$2"
@@ -71,6 +72,10 @@ delete_project() {
     # Push the branch to upstream
     git push origin "$branch_name"
 
+    # Create a Pull Request using GitHub CLI (`gh`)
+    echo "Creating GitHub Pull Request..."
+    gh pr create --base main --head "$branch_name" --title "$branch_name" --body "Automated deletion of $project_var project directory."
+
     # Switch back to main branch
     git checkout main
 
@@ -91,4 +96,5 @@ shift
 for project_id in "$@"; do
     delete_project "$project_id" "$search_path"
 done
+
 ```

@@ -8,9 +8,9 @@ paper thin
 - 1 teaspoon salt
 - 1 cup Splenda Granulated
 Sweetener, divided use
-- 1/4 cup vegetable oil
-- 1/4 cup champagne vinegar
-- 1 1/4 tablespoons dry mustard
+- ¼ cup vegetable oil
+- ¼ cup champagne vinegar
+- 1 ¼ tablespoons dry mustard
 - 1 ½ teaspoons celery seeds
 
 ## Instructions

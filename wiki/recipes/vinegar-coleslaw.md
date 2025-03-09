@@ -1,7 +1,7 @@
 # Vinegar Coleslaw 
 
 ## Ingredients
-- 12 head green cabbage, sliced
+- ½ head green cabbage, sliced
 paper thin
 - 1 yellow onion, sliced paper thin
 - 1 small carrot, grated

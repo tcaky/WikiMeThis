@@ -24,7 +24,16 @@
 
 ---
 
-## 🧑‍🍳 Instructions
+## 🧑‍🍳 Stand Mixer Instructions
+
+1. **Combine dry ingredients** in the mixer bowl using the paddle or dough hook briefly on low speed.
+2. **Add oil and most of the water** (start with ~120g). Begin mixing on low.
+3. Slowly **increase to medium speed** and mix for 4–6 minutes, adding the remaining water 1 tbsp at a time until dough becomes soft and pliable but not sticky.
+4. Scrape sides if needed. If using a dough hook, mix until the dough forms a smooth, elastic ball (another 2–3 min).
+5. Proceed to rest, portion, and roll as usual. (see manual instructions below starting at step 3)
+
+
+## 🧑‍🍳 Instructions (manual)
 
 1. In a bowl, combine all dry ingredients and whisk thoroughly.
 2. Add oil, then gradually mix in water. Knead into a soft, cohesive dough.

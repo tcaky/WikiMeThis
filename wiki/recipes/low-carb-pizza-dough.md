@@ -23,7 +23,16 @@
 
 ---
 
-## 🧑‍🍳 Instructions
+## 🧑‍🍳 Stand Mixer Instructions
+
+1. Add all **dry ingredients** to the bowl and mix briefly on low.
+2. Add oil and 120g of water, mix on low until the dough starts coming together.
+3. Switch to medium speed with a dough hook and knead for **6–8 minutes**.
+4. Add more water gradually (up to full 140g) until the dough is firm but elastic.
+5. Cover the bowl and **let the dough rest 10–15 minutes**.
+6. Roll/press, dock, and bake as per manual instructions below starting at step 4.
+
+## 🧑‍🍳 Instructions (manual)
 
 1. Mix all dry ingredients in a large bowl.
 2. Add oil and water gradually. Mix and knead into a firm dough.

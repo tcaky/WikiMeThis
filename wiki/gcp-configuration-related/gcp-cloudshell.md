@@ -9,4 +9,4 @@ The [documentation for vscode](https://code.visualstudio.com/docs/getstarted/set
 find ~ -type d -name 'User'
 ```
 
-![image](../assets/0753.png)
+![image](../../assets/0753.png)

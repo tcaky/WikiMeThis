@@ -110,7 +110,8 @@ The `settings.json` file I am using is as follows:
     "terminal.integrated.fontFamily": "FiraMono Nerd Font, Consolas, 'Courier New', monospace",
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.localEchoStyle": "dim",
-    "cloudcode.project": "GCP_CLOUD_PROJECT_HERE"
+    "cloudcode.project": "GCP_CLOUD_PROJECT_HERE",
+    "googlecloudcode.gemini.enabled": false
     // KY2
 }
 ```
